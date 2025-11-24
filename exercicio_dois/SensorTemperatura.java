@@ -1,5 +1,17 @@
 package exercicio_dois;
 
+/**
+ * Modelar um sensor de temperatura que regista leituras e calcula estatísticas simples de
+ * monitorização de ambiente.
+ * 
+ * @author Judson Paiva
+ * @version 1.0
+ * @since 1
+ * 
+ * 
+ * @see Program
+ */
+
 public class SensorTemperatura {
 	
 	private String identificador;
@@ -9,6 +21,11 @@ public class SensorTemperatura {
 	private double somaLeituras;
 	private int quantidadeLeituras;
 	
+	/**
+	 * Construtor com parametro quando se instanciar o constructor SensorTemperatura
+	 * @param identificador identifica o local onde monta-se o sensor. Exemplo SALA-01
+	 * @param local nome por extensao do local. Exemplo Laboratorio de Informatica
+	 */
 	
 	public SensorTemperatura(String identificador, String local) {
 		this.identificador = identificador;
@@ -16,7 +33,13 @@ public class SensorTemperatura {
 		somaLeituras = 0;
 		quantidadeLeituras = 0;
 	}
-
+	
+	/**
+	 * @param valor e o valor da temperatura em si
+	 * Na primeira vez se da quando a quantidadeLeituras e = 0
+	 * Nesse momento leitura maxima = a leitura minima
+	 */
+	
 	public void registarLeitura(double valor) {
 		if(quantidadeLeituras == 0) {
 			
@@ -33,6 +56,12 @@ public class SensorTemperatura {
 		somaLeituras += valor;
 		quantidadeLeituras++;
 	}
+	
+	
+	/**
+	 * Devolver a media de todas as temperaturas lidas
+	 * @return a media dass temperaturas, caso nao haja media retorna zero
+	 */
 	
 	public double obterMedia() {
 		if(quantidadeLeituras > 0) {
