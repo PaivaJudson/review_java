@@ -15,7 +15,7 @@ public class Account {
 		this.balance = balance;
 	}
 	
-	public void withdraw(double amount) {
+	public void withdraw(double amount) throws DomainException {
 		if (amount > balance) {
 			throw new DomainException("Erro de Saque: Saldo insuficiente.");
 		}

@@ -10,7 +10,7 @@ public class Program {
 		
 		try {
 			Account account = new Account(1001, 500.0);
-			account.withdraw(60);
+			account.withdraw(600);
 			System.out.println("Saque realizado...");
 			System.out.println(account);
 		} catch (DomainException e) {
